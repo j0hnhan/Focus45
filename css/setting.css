@@ -1,0 +1,46 @@
+
+.jumbotron-fluid {
+    padding: 2rem 2rem;
+}
+
+.settingPart {
+	height: 100%;
+	margin-top: 1.75rem;
+/*	padding-bottom: 600px;*/
+	width: 70%;
+}
+
+.siteInList {
+	float: right;
+}
+
+.userInput {
+	width: 100%;
+}
+
+.userInput label{
+	width: 100%;
+}
+
+.userInput label input[type="text"] {
+	width: 100%;
+}
+
+.customizedTable {
+	margin-top: 20px;
+}
+
+.input-group .form-control:not(:first-child), .input-group-addon:not(:first-child), .input-group-btn:not(:first-child)>.btn, .input-group-btn:not(:first-child)>.btn-group>.btn, .input-group-btn:not(:first-child)>.dropdown-toggle, .input-group-btn:not(:last-child)>.btn-group:not(:first-child)>.btn, .input-group-btn:not(:last-child)>.btn:not(:first-child) {
+	text-align: right;
+}
+
+.tableButton {
+	border: none;
+	background: none;
+	outline: none !important;
+	margin: auto 10%;
+}
+
+button:hover {
+	color: steelblue;
+}

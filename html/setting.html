@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Setting</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/setting.css">
+</head>
+<body>
+	<div class="jumbotron jumbotron-fluid">
+	 	<div class="container">
+	    	<h1 class="display-3">Setting Part</h1>
+	    	<p class="lead">In this section you can add whatever site you want to block to the list and set your foucus time interval.</p>
+	  	</div>
+	</div>
+
+	<div class="container settingPart">
+		<h3>Default List</h3>
+		<div id="defaultList">
+			<ul class="list-group">
+			</ul>
+		</div>
+		
+		<div class="customizedTable">
+			<h3>Your List</h3>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Checked</th>
+						<th>website</th>
+						<th>Delete</th>						
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div class="userInput">
+			<label>
+				Add a website:<br>
+				<input type="text">
+			</label>
+			<br>
+			<label>
+				Set Time:<br>
+				<div class="input-group">
+					<span class="input-group-addon">Minutes</span>
+					<input type="number" class="form-control" min="15" value="45">
+				</div>
+			</label>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../js/setting.js"></script>
+</body>
+</html>
