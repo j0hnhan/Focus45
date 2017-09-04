@@ -79,12 +79,16 @@ function deleteClicked(e) {
 	attchEventListener();
 }
 
+function add(urlStr) {
+	var siteList = JSON.parse(localStorage.customized);
+	siteList.push({url:urlStr, block: true});
+	localStorage.customized = JSON.stringify(siteList);	
+}
+
 function siteAdd(e) {
 	if(e.keyCode === 13) {
 		var urlInput = document.querySelector('input[type="text"]');
-		var siteList = JSON.parse(localStorage.customized);
-		siteList.push({url:urlInput.value, block: true});
-		localStorage.customized = JSON.stringify(siteList);
+		add(urlInput.value);
 		urlInput.value = "";
 		updateCustomizedList();
 		attchEventListener();
@@ -102,13 +106,26 @@ function setTime(e) {
 	}
 }
 
+function saveClicked() {
+	var urlInput = document.querySelector('input[type="text"]');
+	if(urlInput.value !== "") {
+		add(urlInput.value);
+	}
+	var timeInput = document.querySelector('input[type="number"]');
+	if(timeInput.value !== "" && Number(timeInput.value) >= 15 && Number(timeInput.value) !== Number(localStorage.time)) {
+		localStorage.time = timeInput.value;
+	}
+
+	window.close();
+}
+
 function attchEventListener() {
 	var checkBoxes = document.querySelectorAll('input[type="checkbox"]');
 	for(var i = 0; i < checkBoxes.length; i++) {
 		checkBoxes[i].addEventListener("change",checkBoxChange);
 	}
 
-	var deleteBtns = document.querySelectorAll("button");
+	var deleteBtns = document.querySelectorAll(".tableButton");
 	for(var i = 0; i < deleteBtns.length; i++) {
 		deleteBtns[i].addEventListener("click", deleteClicked);
 	}
@@ -118,6 +135,9 @@ function attchEventListener() {
 
 	var timeInput = document.querySelector('input[type="number"]');
 	timeInput.addEventListener("keypress", setTime);
+
+	var saveBtn = document.getElementById("save");
+	save.addEventListener("click", saveClicked);
 }
 
 init();

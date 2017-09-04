@@ -1,4 +1,6 @@
-
+body {
+	font-size: 14px;
+}
 .jumbotron-fluid {
     padding: 2rem 2rem;
 }
@@ -41,6 +43,10 @@
 	margin: auto 10%;
 }
 
-button:hover {
+.tableButton:hover {
 	color: steelblue;
+}
+
+#save {
+	margin: 10px 45%;
 }

@@ -99,7 +99,7 @@ setInterval(function(){
 		  message: 'Watch around, relax your eye',
 		};
 		chrome.notifications.create('notify2', opt, function() { console.log('created!'); });	
-}, 15*60*1000);
+}, 20*60*1000);
 
 setInterval(function(){
 	chrome.notifications.clear("notify3");
