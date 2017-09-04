@@ -37,8 +37,9 @@ function updateButton() {
 }
 
 function showNotification(titleStr, messageStr, imgUrlStr) {
+	chrome.notifications.clear('notify1');
 	chrome.notifications.create (
-		'Congratulations!', {
+		'notify1', {
 			type:'basic',
 			iconUrl: imgUrlStr,
 			title: titleStr,
@@ -115,8 +116,6 @@ attachSettingBtn();
 updateButton();
 updateTimeDisplay();
 activeBtn.addEventListener("click",onButtonClick);
-
-
 
 
 
