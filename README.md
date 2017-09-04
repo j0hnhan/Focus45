@@ -1,5 +1,5 @@
 # Focus45
----
+
 This extension blocks distracting sites when you need focus on something.
 
 ### Features
@@ -13,10 +13,6 @@ This extension blocks distracting sites when you need focus on something.
 Download source code and check this out [Building a Chrome Extension](https://developer.chrome.com/extensions/getstarted#unpacked)
 
 ### Todo
+---
 * Optimize code structure.
 * Add notification.
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6a2b75598884065032ac6a2b1d9a7157f235ff81
