@@ -33,6 +33,7 @@
     "storage",
     "activeTab",
     "notifications",
+    "alarms",
     "<all_urls>"
   ]
 }

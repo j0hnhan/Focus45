@@ -90,24 +90,28 @@ function updateView(details) {
 
 chrome.webNavigation.onDOMContentLoaded.addListener(updateView);
 
-setInterval(function(){
-	chrome.notifications.clear("notify2");
-		var opt = {
-		  iconUrl: "../image/eye48.png",
-		  type: 'basic',
-		  title: 'Eye protection',
-		  message: 'Watch around, relax your eye',
-		};
-		chrome.notifications.create('notify2', opt, function() { console.log('created!'); });	
-}, 20*60*1000);
+chrome.alarms.clearAll();
+chrome.alarms.create("eyeAlarm", {delayInMinutes: 1, periodInMinutes: 15});
+chrome.alarms.create("sitAlarm", {delayInMinutes: 1, periodInMinutes: 20});
 
-setInterval(function(){
-	chrome.notifications.clear("notify3");
-		var opt = {
-		  iconUrl: "../image/sit48.png",
-		  type: 'basic',
-		  title: '',
-		  message: 'Straight your back!',
-		};
-		chrome.notifications.create('notify3', opt, function() { console.log('created!'); });	
-}, 30*60*1000);
+chrome.alarms.onAlarm.addListener(function(alarms) {
+	if(alarms.name === "eyeAlarm") {
+		chrome.notifications.clear("notify2");
+			var opt = {
+			  iconUrl: "../image/eye48.png",
+			  type: 'basic',
+			  title: 'Eye protection',
+			  message: 'Watch around, relax your eye',
+			};
+		chrome.notifications.create('notify2', opt, function() { console.log('created!'); });
+	} else {
+		chrome.notifications.clear("notify3");
+			var opt = {
+			  iconUrl: "../image/sit48.png",
+			  type: 'basic',
+			  title: '',
+			  message: 'Straight your back!',
+			};
+		chrome.notifications.create('notify3', opt, function() { console.log('created!'); });
+	}
+});
